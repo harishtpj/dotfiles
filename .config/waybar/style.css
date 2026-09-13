@@ -15,7 +15,13 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+
+    /* Nerd Font first for reliable icon rendering */
+    font-family: "JetBrainsMono Nerd Font",
+                 "JetBrainsMono Nerd Font Mono",
+                 "Symbols Nerd Font",
+                 sans-serif;
+
     font-size: 14px;
     font-weight: bold;
     min-height: 0;
@@ -29,7 +35,13 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-.modules-left, .modules-center, .modules-right {
+/* -----------------------------------------------------------------------------
+ * CONTAINERS
+ * ----------------------------------------------------------------------------- */
+
+.modules-left,
+.modules-center,
+.modules-right {
     background: @bg;
     border: 1px solid @comment;
     border-radius: 25px;
@@ -37,7 +49,10 @@ window#waybar.hidden {
     margin: 0;
 }
 
-/* WORKSPACES */
+/* -----------------------------------------------------------------------------
+ * WORKSPACES
+ * ----------------------------------------------------------------------------- */
+
 #workspaces button {
     color: @comment;
     background: transparent;
@@ -65,12 +80,18 @@ window#waybar.hidden {
     color: @accent-pink;
 }
 
-/* MODULES */
+/* -----------------------------------------------------------------------------
+ * CLOCK
+ * ----------------------------------------------------------------------------- */
 
 #clock {
     color: @accent-purple;
     margin: 0 10px;
 }
+
+/* -----------------------------------------------------------------------------
+ * BATTERY
+ * ----------------------------------------------------------------------------- */
 
 #battery {
     color: @accent-green;
@@ -83,6 +104,7 @@ window#waybar.hidden {
 
 #battery.critical {
     color: @accent-pink;
+
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -90,10 +112,23 @@ window#waybar.hidden {
     animation-direction: alternate;
 }
 
+#battery.charging,
+#battery.plugged {
+    color: @accent-green;
+}
+
+/* -----------------------------------------------------------------------------
+ * NETWORK
+ * ----------------------------------------------------------------------------- */
+
 #network {
     color: @accent-purple;
     margin: 0 10px;
 }
+
+/* -----------------------------------------------------------------------------
+ * AUDIO
+ * ----------------------------------------------------------------------------- */
 
 #pulseaudio {
     color: @accent-cyan;
@@ -104,18 +139,26 @@ window#waybar.hidden {
     color: @comment;
 }
 
+/* -----------------------------------------------------------------------------
+ * BLUETOOTH
+ * ----------------------------------------------------------------------------- */
+
 #bluetooth {
-    color: #7dcfff; /* Cyan/Light Blue */
+    color: @accent-cyan;
     margin: 0 10px;
 }
 
 #bluetooth.connected {
-    color: #7aa2f7; /* Darker Blue when connected */
+    color: @accent-blue;
 }
 
 #bluetooth.off {
-    color: #565f89; /* Greyed out when off */
+    color: @comment;
 }
+
+/* -----------------------------------------------------------------------------
+ * CLIPBOARD
+ * ----------------------------------------------------------------------------- */
 
 #custom-clipboard {
     color: @accent-blue;
@@ -123,11 +166,18 @@ window#waybar.hidden {
     padding-right: 5px;
 }
 
+/* -----------------------------------------------------------------------------
+ * POWER
+ * ----------------------------------------------------------------------------- */
+
 #custom-power {
     color: @accent-pink;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin: 0 10px;
 }
+
+/* -----------------------------------------------------------------------------
+ * TOOLTIP
+ * ----------------------------------------------------------------------------- */
 
 tooltip {
     background: @bg;
@@ -138,6 +188,10 @@ tooltip {
 tooltip label {
     color: @fg;
 }
+
+/* -----------------------------------------------------------------------------
+ * ANIMATIONS
+ * ----------------------------------------------------------------------------- */
 
 @keyframes blink {
     to {

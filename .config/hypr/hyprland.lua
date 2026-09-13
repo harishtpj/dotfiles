@@ -8,11 +8,13 @@ hl.monitor({
 })
 
 local terminal = "kitty"
-local fileManager = "dolphin"
+local fileManager = "nautilus"
 local menu = "rofi -show drun"
 local browser = "firefox"
 
+hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("HYPRCURSOR_SIZE", "24")
 
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
@@ -274,7 +276,7 @@ hl.config({
         new_status = "master",
     },
     misc = {
-        force_default_wallpaper = -1,
+        force_default_wallpaper = 0,
         disable_hyprland_logo = false,
     },
     input = {
@@ -292,7 +294,8 @@ hl.config({
 })
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("swww-daemon")
+    hl.exec_cmd("awww-daemon")
+    hl.exec_cmd("sleep 1 && awww img ~/Pictures/wallpaper.png")
     hl.exec_cmd("waybar")
     hl.exec_cmd("swaync")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")

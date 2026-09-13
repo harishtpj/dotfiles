@@ -7,91 +7,121 @@
     "margin-bottom": -14,
     "margin-left": 20,
     "margin-right": 20,
-    
+
     // Module Ordering
-    "modules-left": ["hyprland/workspaces", "sway/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "bluetooth", "network", "battery", "custom/clipboard", "custom/power"],
+    "modules-left": [
+        "hyprland/workspaces",
+        "sway/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "battery",
+        "custom/clipboard",
+        "custom/power"
+    ],
 
     // Workspaces
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "{name}", 
+        "format": "{name}",
         "on-click": "activate"
     },
-    
+
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "format": "{name}"
     },
-    
+
+    // Clock
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}",
         "format": "{:%I:%M %p}"
     },
 
+    // Battery
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
 
+    // Network
     "network": {
         "format-wifi": "{essid} ",
-        "format-ethernet": "Ethernet ",
-	"on-click":"nm-connection-editor",
-        "tooltip-format": "{ifname} via {gwaddr} \nSignal: {signalStrength}%",
-        "format-linked": "{ifname} (No IP) ",
+        "format-ethernet": "Ethernet 󰈀",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-linked": "{ifname} (No IP) 󰈀",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr} 󰈀\nSignal: {signalStrength}%",
+        "on-click": "nm-connection-editor"
     },
 
+    // Audio
     "pulseaudio": {
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
+        "format-bluetooth": "{volume}% {icon} ",
+        "format-bluetooth-muted": " {icon} ",
         "format-muted": "",
+
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
+
         "on-click": "pavucontrol"
     },
+
+    // Bluetooth
     "bluetooth": {
         "format": " {status}",
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        // Tooltip shows detailed info
+
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        // click to open bluetooth manager (requires blueman installed)
-        "on-click": "blueman-manager" 
+
+        "on-click": "blueman-manager"
     },
 
-    // CLIPBOARD MODULE (ROFI VERSION)
+    // Clipboard
     "custom/clipboard": {
         "format": "",
-        // This command pipes history into rofi, then copies the selection back
         "on-click": "cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy",
         "tooltip": false
     },
-    
+
+    // Power
     "custom/power": {
-        "format": "⏻ ",
+        "format": "⏻",
         "on-click": "wlogout",
         "tooltip": false
     }

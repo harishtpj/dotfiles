@@ -16,7 +16,7 @@ from https://github.com/gyro-uyt/dotfiles
 ## Dependencies
 
 ```bash
-sudo pacman -S stow hyprland kitty fish starship rofi waybar swww swaync cliphist dolphin grim slurp swappy wireplumber brightnessctl playerctl vivid
+sudo pacman -S stow hyprland kitty fish starship rofi waybar swww swaync cliphist nautilus grim slurp swappy wireplumber brightnessctl playerctl vivid firefox btop
 ```
 
 ## Fonts
@@ -27,7 +27,7 @@ sudo pacman -S stow hyprland kitty fish starship rofi waybar swww swaync cliphis
 Install via AUR:
 
 ```bash
-paru -S ttf-fantasque-sans-mono-nerd ttf-jetbrains-mono-nerd
+paru -S ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-mono wlogout bibata-cursor-theme-bin
 ```
 
 ## Installation
@@ -35,7 +35,7 @@ Managed cleanly using **GNU Stow** to avoid cluttering your home directory with 
 
 1. Clone the repository into your local path (e.g., `~/.dotfiles`):
 ```bash
-git clone [https://github.com/harishtpj/dotfiles.git](https://github.com/harishtpj/dotfiles.git) $HOME/.dotfiles
+git clone https://github.com/harishtpj/dotfiles.git $HOME/.dotfiles
 ```
 
 2. Navigate to the dotfiles directory:
