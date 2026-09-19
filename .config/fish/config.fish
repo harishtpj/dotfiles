@@ -8,9 +8,11 @@ end
 
 # --- ALIASES ---
 alias ls "ls --color=auto"
-alias cls "clear"
+alias cls clear
 
 # --- PROMPT (STARSHIP) ---
 if type -q starship
     starship init fish | source
 end
+
+/home/harish/.local/bin/mise activate fish | source
