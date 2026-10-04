@@ -10,13 +10,13 @@ from https://github.com/gyro-uyt/dotfiles
 - **Shell**: [Fish Shell](https://fishshell.com/)
 - **Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Prompt**: [Starship](https://starship.rs/)
-- **Launcher**: [Rofi](https://github.com/davatorium/rofi)
+- **Launcher**: [Fuzzel](https://codeberg.org/dnkl/fuzzel)
 - **Bar**: [Waybar](https://github.com/Alexays/Waybar)
 
 ## Dependencies
 
 ```bash
-sudo pacman -S stow hyprland kitty fish starship rofi waybar swww swaync cliphist nautilus grim slurp swappy wireplumber brightnessctl playerctl vivid firefox btop
+sudo pacman -S stow hyprland kitty fish starship fuzzel waybar swww swaync cliphist nautilus grim slurp swappy wireplumber brightnessctl playerctl vivid firefox btop
 ```
 
 ## Fonts
